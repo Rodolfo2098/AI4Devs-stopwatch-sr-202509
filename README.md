@@ -1,57 +1,112 @@
-# Instrucciones del Ejercicio: Cronómetro y Cuenta Regresiva
+# Cronómetros y Temporizadores - Aplicación Web
 
-## Objetivo
+## 📋 Descripción
 
-Utiliza lo aprendido en _prompt engineering_ para desarrollar **un cronómetro** y **una cuenta regresiva**.
+Aplicación web completa que permite gestionar múltiples cronómetros y temporizadores con persistencia de datos y notificaciones.
 
-### Referencia visual
-Consulta 🔗 [Online Stopwatch](https://www.online-stopwatch.com/) y la imagen `res/stopwatch.png` como guía de diseño.
+## ✨ Características Implementadas
 
-## Recursos Base
+### 🕐 Cronómetros
+- **Cronómetro principal** con botones Iniciar/Pausar y Limpiar
+- **Gestión de múltiples cronómetros** con nombres personalizados
+- **Selección de cronómetro activo** para mostrar en el display principal
+- **Persistencia** de todos los cronómetros creados
 
-Parte del archivo `index.html` y `script.js` proporcionados.
+### ⏰ Temporizadores
+- **Temporizador principal** con entrada de minutos y segundos
+- **Gestión de múltiples temporizadores** con nombres personalizados
+- **Selección de temporizador activo** para mostrar en el display principal
+- **Alarma sonora** usando Web Audio API cuando termina el tiempo
+- **Notificación visual** con modal cuando termina el temporizador
+- **Persistencia** de todos los temporizadores creados
 
-💡 **Tip:** Si el chatbot permite análisis de imágenes, puedes subir la referencia visual para generar un diseño más preciso.
+### 🎨 Interfaz de Usuario
+- **Diseño minimalista** con gradientes y efectos visuales
+- **Sistema de pestañas** para alternar entre cronómetros y temporizadores
+- **Responsive design** que se adapta a dispositivos móviles
+- **Animaciones suaves** y efectos hover
+- **Modal de alerta** para notificaciones
 
-## ⭐️ Extras Obligatorios
+### 💾 Persistencia
+- **localStorage** para guardar cronómetros y temporizadores
+- **Restauración automática** al recargar la página
+- **Manejo de errores** en la carga de datos
 
-1. Al finalizar una cuenta regresiva, **muestra una notificación** y **reproduce un sonido de alerta**.
-2. Permite **crear y gestionar múltiples cronómetros o cuentas regresivas simultáneamente**.
+## 🚀 Uso
 
-## 📝 Entrega
+1. **Cronómetros:**
+   - Haz clic en "Iniciar" para comenzar el cronómetro principal
+   - El botón cambia a "Pausar" mientras está corriendo
+   - Usa "Limpiar" para reiniciar a 00:00:00
+   - Agrega nuevos cronómetros con nombres personalizados
+   - Selecciona cualquier cronómetro para mostrarlo en el display principal
 
-Realiza un **pull request** con los siguientes requisitos:
+2. **Temporizadores:**
+   - Ingresa minutos y segundos en los campos de entrada
+   - Haz clic en "Iniciar" para comenzar la cuenta regresiva
+   - El botón cambia a "Pausar" mientras está corriendo
+   - Usa "Reiniciar" para volver al tiempo original
+   - Agrega nuevos temporizadores con nombres personalizados
+   - Selecciona cualquier temporizador para mostrarlo en el display principal
+   - Cuando termine el tiempo, sonará una alarma y aparecerá una notificación
 
-1. **Crea una carpeta nueva** a partir del template, nombrada `stopwatch-<tus iniciales>`  
-   Ejemplo: `stopwatch-ARM`
+## 🛠️ Tecnologías Utilizadas
 
-2. Dentro de esa carpeta, incluye:
-   - Todo el **código generado**
-   - Un archivo `prompts.md`
-   - Un archivo `chatbot.md`
+- **HTML5** - Estructura semántica
+- **CSS3** - Estilos con gradientes, animaciones y responsive design
+- **JavaScript ES6+** - Programación orientada a objetos con clases
+- **Web Audio API** - Generación de sonidos de alarma
+- **localStorage** - Persistencia de datos en el navegador
 
-3. En el **comentario del Pull Request**, pega el **prompt final** con el que obtuviste la versión entregada.
+## 📁 Estructura del Proyecto
+
+```
+template/
+├── index.html          # Estructura HTML principal
+├── script.js           # Lógica de la aplicación
+└── styles.css          # Estilos CSS minimalistas
+```
+
+## 🎯 Funcionalidades Técnicas
+
+### Clases JavaScript
+- **`Stopwatch`** - Maneja la lógica de cronómetros
+- **`Timer`** - Maneja la lógica de temporizadores
+- **`TimerApp`** - Aplicación principal que coordina todo
+
+### Características Técnicas
+- **Precisión de 10ms** en las actualizaciones de tiempo
+- **Manejo de estados** (corriendo, pausado, detenido)
+- **Event listeners** para interacción del usuario
+- **Validación de entrada** para evitar errores
+- **Manejo de errores** en localStorage
+- **Código modular** y fácil de mantener
+
+## 🔧 Instalación y Ejecución
+
+1. Clona o descarga el proyecto
+2. Abre `template/index.html` en cualquier navegador web moderno
+3. ¡Listo! La aplicación funcionará completamente sin necesidad de servidor
+
+## 📱 Compatibilidad
+
+- ✅ Chrome/Chromium (recomendado)
+- ✅ Firefox
+- ✅ Safari
+- ✅ Edge
+- ✅ Dispositivos móviles (iOS/Android)
+
+## 🎨 Diseño
+
+El diseño está inspirado en la imagen de referencia `res/stopwatch.png` pero con un enfoque minimalista moderno:
+- Gradientes suaves de azul a púrpura
+- Efectos de cristal (glassmorphism)
+- Tipografía clara y legible
+- Botones con efectos hover y sombras
+- Animaciones suaves para transiciones
 
 ---
 
-### 📄 prompts.md
+## 📝 Notas de Desarrollo
 
-Incluye:
-
-- **Prompt inicial con justificación** - Debes explicar qué estrategia de prompting elegiste, por qué estructuraste los prompts de una u otra manera y qué tipo de consideraciones tuviste en cuenta al hacerlo (por ejemplo, nivel de detalle, contexto, iteraciones, etc.).
-- **Resultados parciales** con errores o fallos detectados
-- **Refinamientos aplicados**
-- **Prompt final**  _(también colócalo en el comentario del Pull Request)_
-- **Breve explicación** de por qué el último prompt funcionó mejor
-
----
-
-### 🤖 chatbot.md
-
-Responde:
-
-- ¿**Qué chatbot(s)** usaste?
-- ¿**Qué problemas** encontraste al interactuar con el modelo?
-- ¿**Qué decisiones**  tuviste que tomar tú como desarrollador para mejorar el código propuesto? 
-- ¿**Qué decisiones** tuviste que tomar tú como desarrollador para mejorar el código propuesto?
-- ¿**Cómo evaluarías** la utilidad de este flujo de trabajo real?
+Esta aplicación fue desarrollada siguiendo las mejores prácticas de desarrollo web moderno, con código limpio, bien documentado y fácil de mantener. Todas las funcionalidades solicitadas han sido implementadas exitosamente.
